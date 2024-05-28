@@ -1,0 +1,1445 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.com/car#"
+     xml:base="http://www.example.com/car"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.example.com/car#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#aspirationType -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#aspirationType"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#engineCilinderNumber -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#engineCilinderNumber"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#engineDisplacement -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#engineDisplacement"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#engineName -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#engineName"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#fuelSpec -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#fuelSpec"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#gearboxName -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#gearboxName"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#oilSpec -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#oilSpec"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#producedFrom -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#producedFrom"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#producedUntil -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#producedUntil"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#tireSize -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#tireSize"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#transmissionFluidSpec -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#transmissionFluidSpec"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#transmissionType -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#transmissionType"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#wheelSize -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#wheelSize"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.com/car#hasChronicalDefect -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/car#hasChronicalDefect">
+        <owl:inverseOf rdf:resource="http://www.example.com/car#isChronicalOf"/>
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.example.com/car#Defect"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/car#hasComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/car#hasComponent">
+        <rdfs:range rdf:resource="http://www.example.com/car#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/car#hasModel -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/car#hasModel">
+        <owl:inverseOf rdf:resource="http://www.example.com/car#isProducedBy"/>
+        <rdfs:domain rdf:resource="http://www.example.com/car#Make"/>
+        <rdfs:range rdf:resource="http://www.example.com/car#Model"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/car#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/car#hasSymptom">
+        <owl:inverseOf rdf:resource="http://www.example.com/car#isSymptomOf"/>
+        <rdfs:domain rdf:resource="http://www.example.com/car#Defect"/>
+        <rdfs:range rdf:resource="http://www.example.com/car#Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/car#isChronicalOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/car#isChronicalOf">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Defect"/>
+        <rdfs:range rdf:resource="http://www.example.com/car#Model"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/car#isProducedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/car#isProducedBy">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.example.com/car#Make"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/car#isRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/car#isRelatedTo">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Defect"/>
+        <rdfs:range rdf:resource="http://www.example.com/car#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.com/car#isSymptomOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/car#isSymptomOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.com/car#Symptom"/>
+        <rdfs:range rdf:resource="http://www.example.com/car#Defect"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.com/car#aspirationType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#aspirationType">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#defectCause -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#defectCause">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Defect"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#engineCilinderNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#engineCilinderNumber">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#engineDisplacement -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#engineDisplacement">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#engineName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#engineName">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#fuelSpec -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#fuelSpec">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#gearboxName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#gearboxName">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#modelName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#modelName">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#modelVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#modelVersion">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#oilSpec -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#oilSpec">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#producedFrom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#producedFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#producedUntil -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#producedUntil">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#symptomDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#symptomDescription">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Symptom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#tireSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#tireSize">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#transmissionFluidSpec -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#transmissionFluidSpec">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#transmissionType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#transmissionType">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#wheelSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#wheelSize">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.com/car#BrakeComponent -->
+
+    <owl:Class rdf:about="http://www.example.com/car#BrakeComponent">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/car#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/car#Component -->
+
+    <owl:Class rdf:about="http://www.example.com/car#Component"/>
+    
+
+
+    <!-- http://www.example.com/car#CoolingComponent -->
+
+    <owl:Class rdf:about="http://www.example.com/car#CoolingComponent">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/car#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/car#Defect -->
+
+    <owl:Class rdf:about="http://www.example.com/car#Defect"/>
+    
+
+
+    <!-- http://www.example.com/car#ElectricalComponent -->
+
+    <owl:Class rdf:about="http://www.example.com/car#ElectricalComponent">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/car#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/car#EngineComponent -->
+
+    <owl:Class rdf:about="http://www.example.com/car#EngineComponent">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/car#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/car#ExhaustComponent -->
+
+    <owl:Class rdf:about="http://www.example.com/car#ExhaustComponent">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/car#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/car#FuelSystemComponent -->
+
+    <owl:Class rdf:about="http://www.example.com/car#FuelSystemComponent">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/car#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/car#Make -->
+
+    <owl:Class rdf:about="http://www.example.com/car#Make"/>
+    
+
+
+    <!-- http://www.example.com/car#MiscellaneousComponent -->
+
+    <owl:Class rdf:about="http://www.example.com/car#MiscellaneousComponent">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/car#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/car#Model -->
+
+    <owl:Class rdf:about="http://www.example.com/car#Model"/>
+    
+
+
+    <!-- http://www.example.com/car#SuspensionComponent -->
+
+    <owl:Class rdf:about="http://www.example.com/car#SuspensionComponent">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/car#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.com/car#Symptom -->
+
+    <owl:Class rdf:about="http://www.example.com/car#Symptom"/>
+    
+
+
+    <!-- http://www.example.com/car#TransmissionComponent -->
+
+    <owl:Class rdf:about="http://www.example.com/car#TransmissionComponent">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/car#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.com/car#AirFilter -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#AirFilter">
+        <rdf:type rdf:resource="http://www.example.com/car#EngineComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Alternator -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Alternator">
+        <rdf:type rdf:resource="http://www.example.com/car#ElectricalComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Audi -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Audi">
+        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#BMW -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#BMW">
+        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#BadHeadGasket -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#BadHeadGasket">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <hasSymptom rdf:resource="http://www.example.com/car#ExhaustWhiteSmoke"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#BadSwayBarLink -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#BadSwayBarLink">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#SwayBarLink"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Battery -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Battery">
+        <rdf:type rdf:resource="http://www.example.com/car#ElectricalComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#BatteryLightOn -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#BatteryLightOn">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#FaultyAlternator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#BlownTailLight -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#BlownTailLight">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#TailLight"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#BrakePad -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#BrakePad">
+        <rdf:type rdf:resource="http://www.example.com/car#BrakeComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#BrakePads -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#BrakePads">
+        <rdf:type rdf:resource="http://www.example.com/car#BrakeComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#BrokenHeadlight -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#BrokenHeadlight">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#Headlight"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#BrokenTimingBelt -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#BrokenTimingBelt">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#TimingBelt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#CVTPrematureWear -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#CVTPrematureWear">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <hasSymptom rdf:resource="http://www.example.com/car#VibrationUponAcceleration"/>
+        <isChronicalOf rdf:resource="http://www.example.com/car#HONDA_CIVIC_TOURING_2018_CVT"/>
+        <defectCause>The issue could be caused by design flaws, lubrication issues, manufacturing defects, etc.</defectCause>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#CarWontStart -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#CarWontStart">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#DeadBattery"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#CatalyticConverter -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#CatalyticConverter">
+        <rdf:type rdf:resource="http://www.example.com/car#ExhaustComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#CheckEngineLight -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#CheckEngineLight">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#EngineOverheat"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#FailedOxygenSensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Chevrolet -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Chevrolet">
+        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#CloggedAirFilter -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#CloggedAirFilter">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#AirFilter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#CloggedCatalyticConverter -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#CloggedCatalyticConverter">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#CatalyticConverter"/>
+        <defectCause>Excessive Carbon Build-up</defectCause>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#CloggedFuelInjector -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#CloggedFuelInjector">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isChronicalOf rdf:resource="http://www.example.com/car#TOYOTA_COROLLA_GLI_2008_AT"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#FuelInjector"/>
+        <defectCause>Impurities in Fuel</defectCause>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#CloggedFuelPump -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#CloggedFuelPump">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#FuelPump"/>
+        <defectCause>Debris in Fuel Tank</defectCause>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#ClunkSound -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#ClunkSound">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#BadSwayBarLink"/>
+        <symptomDescription>Noise from
+            suspension when driving over bumps</symptomDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#DeadBattery -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#DeadBattery">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#Battery"/>
+        <defectCause>Unknown Cause</defectCause>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#DimHeadlight -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#DimHeadlight">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#BrokenHeadlight"/>
+        <symptomDescription>The headlight is dim</symptomDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#DirtyThrottleBody -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#DirtyThrottleBody">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#DualClutchPrematureWear -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#DualClutchPrematureWear">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <hasSymptom rdf:resource="http://www.example.com/car#VibrationUponAcceleration"/>
+        <isChronicalOf rdf:resource="http://www.example.com/car#FORD_FOCUS_SE_2017_AT"/>
+        <defectCause>Generally caused by inconsistencies and malfunctions within the dual-clutch automatic transmission system, particularly attributed to design flaws and software issues within the transmission control module (TCM)</defectCause>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#EngineMisfire -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#EngineMisfire">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#FouledSparkPlug"/>
+        <symptomDescription>The engine misfires intermittently</symptomDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#EngineOverheat -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#EngineOverheat">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#Radiator"/>
+        <defectCause>Coolant Leak</defectCause>
+        <rdfs:comment>Engine Overheating: This defect indicates an issue with the engine
+            overheating, often related to problems with the radiator.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#EngineStalling -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#EngineStalling">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#CloggedFuelPump"/>
+        <symptomDescription>The engine stalls frequently</symptomDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#ExhaustWhiteSmoke -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#ExhaustWhiteSmoke">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#BadHeadGasket"/>
+        <symptomDescription>The car exhausts white smoke when functioning</symptomDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#FORD_FOCUS_SE_2017_AT -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#FORD_FOCUS_SE_2017_AT">
+        <rdf:type rdf:resource="http://www.example.com/car#Model"/>
+        <isProducedBy rdf:resource="http://www.example.com/car#Ford"/>
+        <aspirationType>Turbocharged</aspirationType>
+        <engineCilinderNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</engineCilinderNumber>
+        <engineDisplacement rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</engineDisplacement>
+        <engineName>Fox</engineName>
+        <fuelSpec>Regular Unleaded</fuelSpec>
+        <gearboxName>6F15</gearboxName>
+        <modelName>Focus</modelName>
+        <modelVersion>SE</modelVersion>
+        <oilSpec>5W-20</oilSpec>
+        <producedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2017</producedFrom>
+        <producedUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</producedUntil>
+        <tireSize>215/55R16</tireSize>
+        <transmissionFluidSpec>Ford Mercon LV</transmissionFluidSpec>
+        <transmissionType>Automatic</transmissionType>
+        <wheelSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</wheelSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#FORD_FOCUS_ST_2020_MT -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#FORD_FOCUS_ST_2020_MT">
+        <rdf:type rdf:resource="http://www.example.com/car#Model"/>
+        <isProducedBy rdf:resource="http://www.example.com/car#Ford"/>
+        <aspirationType>Turbocharged</aspirationType>
+        <engineCilinderNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</engineCilinderNumber>
+        <engineName>EcoBoost</engineName>
+        <fuelSpec>Premium Unleaded</fuelSpec>
+        <gearboxName>B6</gearboxName>
+        <modelName>Focus</modelName>
+        <modelVersion>ST</modelVersion>
+        <oilSpec>5W-30</oilSpec>
+        <producedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2020</producedFrom>
+        <producedUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2021</producedUntil>
+        <tireSize>235/35R19</tireSize>
+        <transmissionFluidSpec>Ford Dual Clutch Transmission Fluid</transmissionFluidSpec>
+        <transmissionType>Manual</transmissionType>
+        <wheelSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</wheelSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#FailedOxygenSensor -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#FailedOxygenSensor">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#OxygenSensor"/>
+        <defectCause>Sensor Failure</defectCause>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#FaultyAlternator -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#FaultyAlternator">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#Alternator"/>
+        <defectCause>Internal Fault</defectCause>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#FaultyWaterPump -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#FaultyWaterPump">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#WaterPump"/>
+        <defectCause>Bearing Wear</defectCause>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Ford -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Ford">
+        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#FouledSparkPlug -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#FouledSparkPlug">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#SparkPlug"/>
+        <defectCause>Carbon Deposits</defectCause>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#FuelInjector -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#FuelInjector">
+        <rdf:type rdf:resource="http://www.example.com/car#FuelSystemComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#FuelPump -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#FuelPump">
+        <rdf:type rdf:resource="http://www.example.com/car#FuelSystemComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#HONDA_CIVIC_EX_2015_AT -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#HONDA_CIVIC_EX_2015_AT">
+        <rdf:type rdf:resource="http://www.example.com/car#Model"/>
+        <isProducedBy rdf:resource="http://www.example.com/car#Honda"/>
+        <aspirationType>Naturally Aspirated</aspirationType>
+        <engineCilinderNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</engineCilinderNumber>
+        <engineDisplacement rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1800</engineDisplacement>
+        <engineName>R18Z1</engineName>
+        <fuelSpec>Regular Unleaded</fuelSpec>
+        <gearboxName>SKL5</gearboxName>
+        <modelName>Civic</modelName>
+        <modelVersion>EX</modelVersion>
+        <oilSpec>5W-20</oilSpec>
+        <producedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2015</producedFrom>
+        <producedUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</producedUntil>
+        <tireSize>205/55R16</tireSize>
+        <transmissionFluidSpec>Honda ATF DW-1</transmissionFluidSpec>
+        <transmissionType>Automatic</transmissionType>
+        <wheelSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</wheelSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#HONDA_CIVIC_SPORT_2022_MT -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#HONDA_CIVIC_SPORT_2022_MT">
+        <rdf:type rdf:resource="http://www.example.com/car#Model"/>
+        <isProducedBy rdf:resource="http://www.example.com/car#Honda"/>
+        <aspirationType>Turbocharged</aspirationType>
+        <engineCilinderNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</engineCilinderNumber>
+        <engineDisplacement rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1500</engineDisplacement>
+        <engineName>L15B7</engineName>
+        <fuelSpec>Premium Unleaded</fuelSpec>
+        <gearboxName>6MT</gearboxName>
+        <modelName>Civic</modelName>
+        <modelVersion>Sport</modelVersion>
+        <oilSpec>0W-20</oilSpec>
+        <producedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2022</producedFrom>
+        <producedUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</producedUntil>
+        <tireSize>235/40R18</tireSize>
+        <transmissionFluidSpec>Honda MTF</transmissionFluidSpec>
+        <transmissionType>Manual</transmissionType>
+        <wheelSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</wheelSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#HONDA_CIVIC_TOURING_2018_CVT -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#HONDA_CIVIC_TOURING_2018_CVT">
+        <rdf:type rdf:resource="http://www.example.com/car#Model"/>
+        <isProducedBy rdf:resource="http://www.example.com/car#Honda"/>
+        <aspirationType>Turbocharged</aspirationType>
+        <engineCilinderNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</engineCilinderNumber>
+        <engineDisplacement rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1500</engineDisplacement>
+        <engineName>L15B7</engineName>
+        <fuelSpec>Premium Unleaded</fuelSpec>
+        <gearboxName>LL-CVT</gearboxName>
+        <modelName>Civic</modelName>
+        <modelVersion>Touring</modelVersion>
+        <oilSpec>0W-20</oilSpec>
+        <producedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</producedFrom>
+        <producedUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</producedUntil>
+        <tireSize>235/40R18</tireSize>
+        <transmissionFluidSpec>Honda HCF-2</transmissionFluidSpec>
+        <transmissionType>CVT</transmissionType>
+        <wheelSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</wheelSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#HeadGasket -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#HeadGasket">
+        <rdf:type rdf:resource="http://www.example.com/car#EngineComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Headlight -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Headlight">
+        <rdf:type rdf:resource="http://www.example.com/car#ElectricalComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Honda -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Honda">
+        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Hyundai -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Hyundai">
+        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Kia -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Kia">
+        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#LeakingOilFilter -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#LeakingOilFilter">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#OilFilter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#LeakingRadiator -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#LeakingRadiator">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#Radiator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#LowCoolantWarning -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#LowCoolantWarning">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#FaultyWaterPump"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Nissan -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Nissan">
+        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#NoTailLight -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#NoTailLight">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#BlownTailLight"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#OilFilter -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#OilFilter">
+        <rdf:type rdf:resource="http://www.example.com/car#EngineComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#OilLeak -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#OilLeak">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#LeakingOilFilter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Overheating -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Overheating">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#LeakingRadiator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#OxygenSensor -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#OxygenSensor">
+        <rdf:type rdf:resource="http://www.example.com/car#ExhaustComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#PoorFuelEconomy -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#PoorFuelEconomy">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#CloggedCatalyticConverter"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#CloggedFuelInjector"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Radiator -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Radiator">
+        <rdf:type rdf:resource="http://www.example.com/car#CoolingComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#ReducedEnginePower -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#ReducedEnginePower">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#CloggedAirFilter"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#CloggedFuelInjector"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#CloggedFuelPump"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#RoughIdle -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#RoughIdle">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#DirtyThrottleBody"/>
+        <symptomDescription>The engine idles roughly</symptomDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#SparkPlug -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#SparkPlug">
+        <rdf:type rdf:resource="http://www.example.com/car#EngineComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#SqueakingNoise -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#SqueakingNoise">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#WornBrakePad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#SqueakyBrakes -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#SqueakyBrakes">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#WornBrakePads"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#StreakyWindshield -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#StreakyWindshield">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#WornWindshieldWiper"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Subaru -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Subaru">
+        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#SwayBarLink -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#SwayBarLink">
+        <rdf:type rdf:resource="http://www.example.com/car#SuspensionComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#TOYOTA_COROLLA_GLI_2008_AT -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#TOYOTA_COROLLA_GLI_2008_AT">
+        <rdf:type rdf:resource="http://www.example.com/car#Model"/>
+        <isProducedBy rdf:resource="http://www.example.com/car#Toyota"/>
+        <aspirationType>Naturally Aspirated</aspirationType>
+        <engineCilinderNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</engineCilinderNumber>
+        <engineDisplacement rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1800</engineDisplacement>
+        <engineName>1ZZ-FE</engineName>
+        <fuelSpec>Regular Unleaded</fuelSpec>
+        <gearboxName>C59</gearboxName>
+        <modelName>Corolla</modelName>
+        <modelVersion>GLI</modelVersion>
+        <oilSpec>5W-30</oilSpec>
+        <producedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1966</producedFrom>
+        <producedUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</producedUntil>
+        <tireSize>195/65R15</tireSize>
+        <transmissionFluidSpec>Toyota ATF WS</transmissionFluidSpec>
+        <transmissionType>Automatic</transmissionType>
+        <wheelSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</wheelSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#TOYOTA_COROLLA_XLE_2021_AT -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#TOYOTA_COROLLA_XLE_2021_AT">
+        <rdf:type rdf:resource="http://www.example.com/car#Model"/>
+        <isProducedBy rdf:resource="http://www.example.com/car#Toyota"/>
+        <aspirationType>Naturally Aspirated</aspirationType>
+        <engineCilinderNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</engineCilinderNumber>
+        <engineDisplacement rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</engineDisplacement>
+        <engineName>M20A-FKS</engineName>
+        <fuelSpec>Regular Unleaded</fuelSpec>
+        <gearboxName>P7110</gearboxName>
+        <modelName>Corolla</modelName>
+        <modelVersion>XLE</modelVersion>
+        <oilSpec>0W-16</oilSpec>
+        <producedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2021</producedFrom>
+        <producedUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</producedUntil>
+        <tireSize>205/55R16</tireSize>
+        <transmissionFluidSpec>Toyota ATF WS</transmissionFluidSpec>
+        <transmissionType>CVT</transmissionType>
+        <wheelSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</wheelSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#TOYOTA_COROLLA_XLI_2010_MT -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#TOYOTA_COROLLA_XLI_2010_MT">
+        <rdf:type rdf:resource="http://www.example.com/car#Model"/>
+        <isProducedBy rdf:resource="http://www.example.com/car#Toyota"/>
+        <aspirationType>Naturally Aspirated</aspirationType>
+        <engineCilinderNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</engineCilinderNumber>
+        <engineDisplacement rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1300</engineDisplacement>
+        <engineName>2NZ-FE</engineName>
+        <fuelSpec>Regular Unleaded</fuelSpec>
+        <gearboxName>Manual</gearboxName>
+        <modelName>Corolla</modelName>
+        <modelVersion>XLI</modelVersion>
+        <oilSpec>5W-30</oilSpec>
+        <producedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2010</producedFrom>
+        <producedUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</producedUntil>
+        <tireSize>195/65R15</tireSize>
+        <transmissionFluidSpec>None</transmissionFluidSpec>
+        <transmissionType>Manual</transmissionType>
+        <wheelSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</wheelSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#TailLight -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#TailLight">
+        <rdf:type rdf:resource="http://www.example.com/car#ElectricalComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#TimingBelt -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#TimingBelt">
+        <rdf:type rdf:resource="http://www.example.com/car#EngineComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#TimingChainTensorPrematureWear -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#TimingChainTensorPrematureWear">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <hasSymptom rdf:resource="http://www.example.com/car#CheckEngineLight"/>
+        <hasSymptom rdf:resource="http://www.example.com/car#EngineMisfire"/>
+        <hasSymptom rdf:resource="http://www.example.com/car#RoughIdle"/>
+        <isChronicalOf rdf:resource="http://www.example.com/car#VOLKSWAGEN_JETTA_SE_2019_AT"/>
+        <defectCause>Most likely due to design flaws in the timing chain tensioner, potential material quality issues, and inadequate lubrication</defectCause>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Tire -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Tire">
+        <rdf:type rdf:resource="http://www.example.com/car#SuspensionComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Toyota -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Toyota">
+        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#VOLKSWAGEN_JETTA_GLX_2003_MT -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#VOLKSWAGEN_JETTA_GLX_2003_MT">
+        <rdf:type rdf:resource="http://www.example.com/car#Model"/>
+        <isProducedBy rdf:resource="http://www.example.com/car#Volkswagen"/>
+        <aspirationType>Naturally Aspirated</aspirationType>
+        <engineCilinderNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</engineCilinderNumber>
+        <engineDisplacement rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2800</engineDisplacement>
+        <engineName>VR6</engineName>
+        <fuelSpec>Premium Unleaded</fuelSpec>
+        <gearboxName>02J</gearboxName>
+        <modelName>Jetta</modelName>
+        <modelVersion>GLX</modelVersion>
+        <oilSpec>5W-30</oilSpec>
+        <producedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2003</producedFrom>
+        <producedUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</producedUntil>
+        <tireSize>205/55R16</tireSize>
+        <transmissionFluidSpec>Volkswagen MTF</transmissionFluidSpec>
+        <transmissionType>Manual</transmissionType>
+        <wheelSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</wheelSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#VOLKSWAGEN_JETTA_R_LINE_2021_DSG -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#VOLKSWAGEN_JETTA_R_LINE_2021_DSG">
+        <rdf:type rdf:resource="http://www.example.com/car#Model"/>
+        <isProducedBy rdf:resource="http://www.example.com/car#Volkswagen"/>
+        <aspirationType>Turbocharged</aspirationType>
+        <engineCilinderNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</engineCilinderNumber>
+        <engineDisplacement rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1400</engineDisplacement>
+        <engineName>CZTA</engineName>
+        <fuelSpec>Regular Unleaded</fuelSpec>
+        <gearboxName>DQ200</gearboxName>
+        <modelName>Jetta</modelName>
+        <modelVersion>R-Line</modelVersion>
+        <oilSpec>5W-30</oilSpec>
+        <producedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2021</producedFrom>
+        <producedUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</producedUntil>
+        <tireSize>225/45R17</tireSize>
+        <transmissionFluidSpec>Volkswagen ATF</transmissionFluidSpec>
+        <transmissionType>DSG</transmissionType>
+        <wheelSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17</wheelSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#VOLKSWAGEN_JETTA_SE_2019_AT -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#VOLKSWAGEN_JETTA_SE_2019_AT">
+        <rdf:type rdf:resource="http://www.example.com/car#Model"/>
+        <isProducedBy rdf:resource="http://www.example.com/car#Volkswagen"/>
+        <aspirationType>Turbocharged</aspirationType>
+        <engineCilinderNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</engineCilinderNumber>
+        <engineDisplacement rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1400</engineDisplacement>
+        <engineName>CZTA</engineName>
+        <fuelSpec>Regular Unleaded</fuelSpec>
+        <gearboxName>09G</gearboxName>
+        <modelName>Jetta</modelName>
+        <modelVersion>SE</modelVersion>
+        <oilSpec>5W-30</oilSpec>
+        <producedFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2019</producedFrom>
+        <producedUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</producedUntil>
+        <tireSize>205/55R16</tireSize>
+        <transmissionFluidSpec>Volkswagen ATF</transmissionFluidSpec>
+        <transmissionType>Automatic</transmissionType>
+        <wheelSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</wheelSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#VibrationUponAcceleration -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#VibrationUponAcceleration">
+        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <symptomDescription>The car vibrate upon acceleration, specially at lower speeds.</symptomDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#Volkswagen -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Volkswagen">
+        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#WaterPump -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#WaterPump">
+        <rdf:type rdf:resource="http://www.example.com/car#CoolingComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#WindshieldWiper -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#WindshieldWiper">
+        <rdf:type rdf:resource="http://www.example.com/car#MiscellaneousComponent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#WornBrakePad -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#WornBrakePad">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#BrakePad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#WornBrakePads -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#WornBrakePads">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#BrakePads"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#WornWindshieldWiper -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#WornWindshieldWiper">
+        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#WindshieldWiper"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.com/car#BrakeComponent"/>
+            <rdf:Description rdf:about="http://www.example.com/car#CoolingComponent"/>
+            <rdf:Description rdf:about="http://www.example.com/car#Defect"/>
+            <rdf:Description rdf:about="http://www.example.com/car#ElectricalComponent"/>
+            <rdf:Description rdf:about="http://www.example.com/car#EngineComponent"/>
+            <rdf:Description rdf:about="http://www.example.com/car#ExhaustComponent"/>
+            <rdf:Description rdf:about="http://www.example.com/car#FuelSystemComponent"/>
+            <rdf:Description rdf:about="http://www.example.com/car#Make"/>
+            <rdf:Description rdf:about="http://www.example.com/car#MiscellaneousComponent"/>
+            <rdf:Description rdf:about="http://www.example.com/car#Model"/>
+            <rdf:Description rdf:about="http://www.example.com/car#SuspensionComponent"/>
+            <rdf:Description rdf:about="http://www.example.com/car#Symptom"/>
+            <rdf:Description rdf:about="http://www.example.com/car#TransmissionComponent"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.com/car#Component"/>
+            <rdf:Description rdf:about="http://www.example.com/car#Defect"/>
+            <rdf:Description rdf:about="http://www.example.com/car#Make"/>
+            <rdf:Description rdf:about="http://www.example.com/car#Model"/>
+            <rdf:Description rdf:about="http://www.example.com/car#Symptom"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
