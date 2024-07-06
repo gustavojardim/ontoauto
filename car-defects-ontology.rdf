@@ -21,6 +21,12 @@
     
 
 
+    <!-- http://www.example.com/car#defectTitle -->
+
+    <owl:AnnotationProperty rdf:about="http://www.example.com/car#defectTitle"/>
+    
+
+
     <!-- http://www.w3.org/2000/01/rdf-schema#aspirationType -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#aspirationType"/>
@@ -205,9 +211,27 @@
     
 
 
+    <!-- http://www.example.com/car#componentName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#componentName">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Component"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.example.com/car#defectCause -->
 
     <owl:DatatypeProperty rdf:about="http://www.example.com/car#defectCause">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Defect"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#defectName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#defectName">
         <rdfs:domain rdf:resource="http://www.example.com/car#Defect"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -254,6 +278,15 @@
 
     <owl:DatatypeProperty rdf:about="http://www.example.com/car#gearboxName">
         <rdfs:domain rdf:resource="http://www.example.com/car#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#makeName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#makeName">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Make"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -307,6 +340,15 @@
     <!-- http://www.example.com/car#symptomDescription -->
 
     <owl:DatatypeProperty rdf:about="http://www.example.com/car#symptomDescription">
+        <rdfs:domain rdf:resource="http://www.example.com/car#Symptom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.com/car#symptomTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.com/car#symptomTitle">
         <rdfs:domain rdf:resource="http://www.example.com/car#Symptom"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -475,25 +517,13 @@
 
     <!-- http://www.example.com/car#AirFilter -->
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#AirFilter">
-        <rdf:type rdf:resource="http://www.example.com/car#EngineComponent"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#AirFilter"/>
     
 
 
     <!-- http://www.example.com/car#Alternator -->
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#Alternator">
-        <rdf:type rdf:resource="http://www.example.com/car#ElectricalComponent"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.example.com/car#Audi -->
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#Audi">
-        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Alternator"/>
     
 
 
@@ -501,6 +531,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#BMW">
         <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+        <makeName>BMW</makeName>
     </owl:NamedIndividual>
     
 
@@ -510,6 +541,7 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#BadHeadGasket">
         <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
         <hasSymptom rdf:resource="http://www.example.com/car#ExhaustWhiteSmoke"/>
+        <defectCause>Gasket Failure</defectCause>
     </owl:NamedIndividual>
     
 
@@ -518,7 +550,10 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#BadSwayBarLink">
         <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <hasSymptom rdf:resource="http://www.example.com/car#ClunkSound"/>
         <isRelatedTo rdf:resource="http://www.example.com/car#SwayBarLink"/>
+        <defectCause>Link Wear</defectCause>
+        <defectName>Clunk sound</defectName>
     </owl:NamedIndividual>
     
 
@@ -527,6 +562,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#Battery">
         <rdf:type rdf:resource="http://www.example.com/car#ElectricalComponent"/>
+        <componentName>Battery</componentName>
     </owl:NamedIndividual>
     
 
@@ -536,6 +572,8 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#BatteryLightOn">
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#FaultyAlternator"/>
+        <symptomDescription>Battery warning light is illuminated on the dashboard</symptomDescription>
+        <symptomTitle>Battery Light On</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -545,6 +583,7 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#BlownTailLight">
         <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
         <isRelatedTo rdf:resource="http://www.example.com/car#TailLight"/>
+        <defectCause>Burnt out bulb</defectCause>
     </owl:NamedIndividual>
     
 
@@ -553,6 +592,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#BrakePad">
         <rdf:type rdf:resource="http://www.example.com/car#BrakeComponent"/>
+        <componentName>Brake Pad</componentName>
     </owl:NamedIndividual>
     
 
@@ -561,6 +601,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#BrakePads">
         <rdf:type rdf:resource="http://www.example.com/car#BrakeComponent"/>
+        <componentName>Brake Pads</componentName>
     </owl:NamedIndividual>
     
 
@@ -570,6 +611,7 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#BrokenHeadlight">
         <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
         <isRelatedTo rdf:resource="http://www.example.com/car#Headlight"/>
+        <defectCause>Physical damage</defectCause>
     </owl:NamedIndividual>
     
 
@@ -579,6 +621,7 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#BrokenTimingBelt">
         <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
         <isRelatedTo rdf:resource="http://www.example.com/car#TimingBelt"/>
+        <defectCause>Wear and tear</defectCause>
     </owl:NamedIndividual>
     
 
@@ -599,6 +642,8 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#CarWontStart">
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#DeadBattery"/>
+        <symptomDescription>The car fails to start</symptomDescription>
+        <symptomTitle>Car Won&apos;t Start</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -607,6 +652,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#CatalyticConverter">
         <rdf:type rdf:resource="http://www.example.com/car#ExhaustComponent"/>
+        <componentName>Catalytic Converter</componentName>
     </owl:NamedIndividual>
     
 
@@ -617,6 +663,8 @@
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#EngineOverheat"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#FailedOxygenSensor"/>
+        <symptomDescription>The check engine light is illuminated on the dashboard</symptomDescription>
+        <symptomTitle>Check Engine Light</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -625,6 +673,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#Chevrolet">
         <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+        <makeName>Chevrolet</makeName>
     </owl:NamedIndividual>
     
 
@@ -634,6 +683,7 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#CloggedAirFilter">
         <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
         <isRelatedTo rdf:resource="http://www.example.com/car#AirFilter"/>
+        <defectCause>Accumulated dirt and debris</defectCause>
     </owl:NamedIndividual>
     
 
@@ -674,8 +724,8 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#ClunkSound">
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#BadSwayBarLink"/>
-        <symptomDescription>Noise from
-            suspension when driving over bumps</symptomDescription>
+        <symptomDescription>Noise from suspension when driving over bumps</symptomDescription>
+        <symptomTitle>Clunk Sound</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -696,6 +746,7 @@
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#BrokenHeadlight"/>
         <symptomDescription>The headlight is dim</symptomDescription>
+        <symptomTitle>Dim Headlight</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -704,6 +755,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#DirtyThrottleBody">
         <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
+        <isRelatedTo rdf:resource="http://www.example.com/car#ThrottleBody"/>
+        <defectCause>Accumulated dirt and carbon</defectCause>
     </owl:NamedIndividual>
     
 
@@ -714,30 +767,20 @@
         <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
         <hasSymptom rdf:resource="http://www.example.com/car#VibrationUponAcceleration"/>
         <isChronicalOf rdf:resource="http://www.example.com/car#FORD_FOCUS_SE_2017_AT"/>
-        <defectCause>Generally caused by inconsistencies and malfunctions within the dual-clutch automatic transmission system, particularly attributed to design flaws and software issues within the transmission control module (TCM)</defectCause>
+        <defectCause>Generally caused by inconsistencies and malfunctions within the dual-clutch automatic transmission system, particularly attributed to design flaws and software-related problems.</defectCause>
     </owl:NamedIndividual>
     
 
 
     <!-- http://www.example.com/car#EngineMisfire -->
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#EngineMisfire">
-        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
-        <isSymptomOf rdf:resource="http://www.example.com/car#FouledSparkPlug"/>
-        <symptomDescription>The engine misfires intermittently</symptomDescription>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#EngineMisfire"/>
     
 
 
     <!-- http://www.example.com/car#EngineOverheat -->
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#EngineOverheat">
-        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
-        <isRelatedTo rdf:resource="http://www.example.com/car#Radiator"/>
-        <defectCause>Coolant Leak</defectCause>
-        <rdfs:comment>Engine Overheating: This defect indicates an issue with the engine
-            overheating, often related to problems with the radiator.</rdfs:comment>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#EngineOverheat"/>
     
 
 
@@ -747,6 +790,7 @@
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#CloggedFuelPump"/>
         <symptomDescription>The engine stalls frequently</symptomDescription>
+        <symptomTitle>Engine Stalling</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -757,6 +801,7 @@
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#BadHeadGasket"/>
         <symptomDescription>The car exhausts white smoke when functioning</symptomDescription>
+        <symptomTitle>Exhaust White Smoke</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -842,6 +887,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#Ford">
         <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+        <makeName>Ford</makeName>
     </owl:NamedIndividual>
     
 
@@ -860,6 +906,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#FuelInjector">
         <rdf:type rdf:resource="http://www.example.com/car#FuelSystemComponent"/>
+        <componentName>Fuel Injector</componentName>
     </owl:NamedIndividual>
     
 
@@ -868,6 +915,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#FuelPump">
         <rdf:type rdf:resource="http://www.example.com/car#FuelSystemComponent"/>
+        <componentName>Fuel Pump</componentName>
     </owl:NamedIndividual>
     
 
@@ -948,6 +996,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#HeadGasket">
         <rdf:type rdf:resource="http://www.example.com/car#EngineComponent"/>
+        <componentName>Head Gasket</componentName>
     </owl:NamedIndividual>
     
 
@@ -956,58 +1005,26 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#Headlight">
         <rdf:type rdf:resource="http://www.example.com/car#ElectricalComponent"/>
+        <componentName>Headlight</componentName>
     </owl:NamedIndividual>
     
 
 
     <!-- http://www.example.com/car#Honda -->
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#Honda">
-        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.example.com/car#Hyundai -->
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#Hyundai">
-        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.example.com/car#Kia -->
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#Kia">
-        <rdf:type rdf:resource="http://www.example.com/car#Make"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#Honda"/>
     
 
 
     <!-- http://www.example.com/car#LeakingOilFilter -->
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#LeakingOilFilter">
-        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
-        <isRelatedTo rdf:resource="http://www.example.com/car#OilFilter"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#LeakingOilFilter"/>
     
 
 
     <!-- http://www.example.com/car#LeakingRadiator -->
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#LeakingRadiator">
-        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
-        <isRelatedTo rdf:resource="http://www.example.com/car#Radiator"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.example.com/car#LowCoolantWarning -->
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#LowCoolantWarning">
-        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
-        <isSymptomOf rdf:resource="http://www.example.com/car#FaultyWaterPump"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#LeakingRadiator"/>
     
 
 
@@ -1015,15 +1032,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#Nissan">
         <rdf:type rdf:resource="http://www.example.com/car#Make"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.example.com/car#NoTailLight -->
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#NoTailLight">
-        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
-        <isSymptomOf rdf:resource="http://www.example.com/car#BlownTailLight"/>
+        <makeName>Nissan</makeName>
     </owl:NamedIndividual>
     
 
@@ -1032,6 +1041,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#OilFilter">
         <rdf:type rdf:resource="http://www.example.com/car#EngineComponent"/>
+        <componentName>Oil filter</componentName>
     </owl:NamedIndividual>
     
 
@@ -1041,6 +1051,8 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#OilLeak">
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#LeakingOilFilter"/>
+        <symptomDescription>Car has oil marks underneath the engine bay</symptomDescription>
+        <symptomTitle>Oil Leak</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -1050,6 +1062,8 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#Overheating">
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#LeakingRadiator"/>
+        <symptomDescription>Engine is overheating</symptomDescription>
+        <symptomTitle>Engine overheating</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -1058,6 +1072,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#OxygenSensor">
         <rdf:type rdf:resource="http://www.example.com/car#ExhaustComponent"/>
+        <componentName>Oxygen Sensor</componentName>
     </owl:NamedIndividual>
     
 
@@ -1068,6 +1083,8 @@
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#CloggedCatalyticConverter"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#CloggedFuelInjector"/>
+        <symptomDescription>Car is consuming more fuel than usual</symptomDescription>
+        <symptomTitle>Poor fuel economy</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -1076,6 +1093,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#Radiator">
         <rdf:type rdf:resource="http://www.example.com/car#CoolingComponent"/>
+        <componentName>Radiator</componentName>
     </owl:NamedIndividual>
     
 
@@ -1087,6 +1105,8 @@
         <isSymptomOf rdf:resource="http://www.example.com/car#CloggedAirFilter"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#CloggedFuelInjector"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#CloggedFuelPump"/>
+        <symptomDescription>Loss of acceleration power</symptomDescription>
+        <symptomTitle>Reduced engine power</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -1097,6 +1117,7 @@
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#DirtyThrottleBody"/>
         <symptomDescription>The engine idles roughly</symptomDescription>
+        <symptomTitle>Rough Idle</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -1105,24 +1126,18 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#SparkPlug">
         <rdf:type rdf:resource="http://www.example.com/car#EngineComponent"/>
+        <componentName>Spark plug</componentName>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.example.com/car#SqueakingNoise -->
+    <!-- http://www.example.com/car#SqueakyNoise -->
 
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#SqueakingNoise">
-        <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
-        <isSymptomOf rdf:resource="http://www.example.com/car#WornBrakePad"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.example.com/car#SqueakyBrakes -->
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#SqueakyBrakes">
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#SqueakyNoise">
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#WornBrakePads"/>
+        <symptomDescription>Car makes squeaky sound when braking</symptomDescription>
+        <symptomTitle>Squeaky noise</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -1132,6 +1147,8 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#StreakyWindshield">
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
         <isSymptomOf rdf:resource="http://www.example.com/car#WornWindshieldWiper"/>
+        <symptomDescription>Streaky marks on the windshield</symptomDescription>
+        <symptomTitle>Streaky windshield</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -1140,6 +1157,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#Subaru">
         <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+        <makeName>Subaru</makeName>
     </owl:NamedIndividual>
     
 
@@ -1148,6 +1166,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#SwayBarLink">
         <rdf:type rdf:resource="http://www.example.com/car#SuspensionComponent"/>
+        <componentName>Sway Bar Link</componentName>
     </owl:NamedIndividual>
     
 
@@ -1228,7 +1247,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#TailLight">
         <rdf:type rdf:resource="http://www.example.com/car#ElectricalComponent"/>
+        <componentName>Tail light</componentName>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.com/car#ThrottleBody -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.com/car#ThrottleBody"/>
     
 
 
@@ -1236,6 +1262,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#TimingBelt">
         <rdf:type rdf:resource="http://www.example.com/car#EngineComponent"/>
+        <componentName>Timing Belt</componentName>
     </owl:NamedIndividual>
     
 
@@ -1249,6 +1276,7 @@
         <hasSymptom rdf:resource="http://www.example.com/car#RoughIdle"/>
         <isChronicalOf rdf:resource="http://www.example.com/car#VOLKSWAGEN_JETTA_SE_2019_AT"/>
         <defectCause>Most likely due to design flaws in the timing chain tensioner, potential material quality issues, and inadequate lubrication</defectCause>
+        <defectTitle>Timing chain wear</defectTitle>
     </owl:NamedIndividual>
     
 
@@ -1257,6 +1285,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#Tire">
         <rdf:type rdf:resource="http://www.example.com/car#SuspensionComponent"/>
+        <componentName>Tire</componentName>
     </owl:NamedIndividual>
     
 
@@ -1265,6 +1294,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#Toyota">
         <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+        <makeName>Toyota</makeName>
     </owl:NamedIndividual>
     
 
@@ -1345,7 +1375,10 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#VibrationUponAcceleration">
         <rdf:type rdf:resource="http://www.example.com/car#Symptom"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#CVTPrematureWear"/>
+        <isSymptomOf rdf:resource="http://www.example.com/car#DualClutchPrematureWear"/>
         <symptomDescription>The car vibrate upon acceleration, specially at lower speeds.</symptomDescription>
+        <symptomTitle>Vibration upon acceleration.</symptomTitle>
     </owl:NamedIndividual>
     
 
@@ -1354,6 +1387,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#Volkswagen">
         <rdf:type rdf:resource="http://www.example.com/car#Make"/>
+        <makeName>Volkswagen</makeName>
     </owl:NamedIndividual>
     
 
@@ -1362,6 +1396,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#WaterPump">
         <rdf:type rdf:resource="http://www.example.com/car#CoolingComponent"/>
+        <componentName>Water Pump</componentName>
     </owl:NamedIndividual>
     
 
@@ -1370,15 +1405,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.com/car#WindshieldWiper">
         <rdf:type rdf:resource="http://www.example.com/car#MiscellaneousComponent"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.example.com/car#WornBrakePad -->
-
-    <owl:NamedIndividual rdf:about="http://www.example.com/car#WornBrakePad">
-        <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
-        <isRelatedTo rdf:resource="http://www.example.com/car#BrakePad"/>
+        <componentName>Windshield Wiper</componentName>
     </owl:NamedIndividual>
     
 
@@ -1388,6 +1415,7 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#WornBrakePads">
         <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
         <isRelatedTo rdf:resource="http://www.example.com/car#BrakePads"/>
+        <defectName>Worn brake pads</defectName>
     </owl:NamedIndividual>
     
 
@@ -1397,6 +1425,7 @@
     <owl:NamedIndividual rdf:about="http://www.example.com/car#WornWindshieldWiper">
         <rdf:type rdf:resource="http://www.example.com/car#Defect"/>
         <isRelatedTo rdf:resource="http://www.example.com/car#WindshieldWiper"/>
+        <defectName>Worn windshield wiper</defectName>
     </owl:NamedIndividual>
     
 
